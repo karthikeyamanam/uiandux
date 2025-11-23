@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mini UI Designer (Fullscreen Canvas)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="canvas-bg"></div>
+<div id="floating-topbar" class="floating-pane topbar floating" style="left:0;top:0;width:100%;">
+  <div class="pane-header floating-header" id="drag-topbar">
+    <span>Mini UI Designer</span>
+    <span class="float-icons">
+      <button id="minTopbar" class="pane-min-btn">–</button>
+    </span>
+  </div>
+  <div class="topbar-actions" id="topbar-actions">
+    <button id="undoBtn" class="btn" title="Undo (Ctrl+Z)">Undo</button>
+    <button id="redoBtn" class="btn" title="Redo (Ctrl+Y)">Redo</button>
+    <button id="bringFrontBtn" class="btn" title="Bring to Front">Bring Front</button>
+    <button id="sendBackBtn" class="btn" title="Send to Back">Send Back</button>
+    <button id="bringForwardBtn" class="btn" title="Bring Forward">Bring Forward</button>
+    <button id="sendBackwardBtn" class="btn" title="Send Backward">Send Backward</button>
+    <button id="exportBtn" class="btn" title="Export HTML">Export</button>
+    <button id="livePreviewBtn" class="btn" title="Live Preview">Live Preview</button>
+  </div>
+</div>
+<div id="floating-left" class="floating-pane left-pane floating" style="left:20px;top:80px;width:280px;">
+  <div class="pane-header floating-header" id="drag-left">
+    <span>Components</span>
+    <span class="float-icons">
+      <button id="minLeft" class="pane-min-btn">–</button>
+    </span>
+  </div>
+  <div class="components-list" id="componentsList"></div>
+</div>
+<div id="floating-right" class="floating-pane right-pane floating" style="right:20px;top:80px;width:320px;">
+  <div class="pane-header floating-header" id="drag-right">
+    <span>Layers</span>
+    <span class="float-icons">
+      <button id="minRight" class="pane-min-btn">–</button>
+    </span>
+  </div>
+  <div class="panel-scroll" id="layersPanel"></div>
+  <div class="pane-header">Properties</div>
+  <div class="panel-scroll" id="propsPanel"></div>
+</div>
+<div id="canvasWrapper">
+  <div id="canvas"></div>
+</div>
+<div class="statusbar floating-pane" id="statusbar" style="left:0;bottom:0;width:100%;position:fixed;text-align:right;">
+  Elements: <span id="elCount">0</span> | Zoom: <span id="zoomVal">100%</span>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
